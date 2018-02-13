@@ -1,0 +1,11 @@
+version: "2"
+services:
+  apache:
+    image: httpd:latest
+    container_name: httpd.treeipe.com
+    hostname: httpd.treeipe.com
+    volumes:
+      - ./containers/httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./public:/usr/local/apache2/htdocs/
+    ports:
+      - "8080:80"
